@@ -15,6 +15,7 @@ class ViewController: UIViewController {
     var person: String {
         surname + " " + name
     }
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
