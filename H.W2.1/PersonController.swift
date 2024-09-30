@@ -19,12 +19,11 @@ class PersonController: UIViewController {
         }
     }
     
-    let person: Person = Person()
+    let fullName: Person = Person()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print("Меня зовут \(person.person), я создал свое первое приложение")
        
     }
 
