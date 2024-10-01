@@ -9,19 +9,14 @@ import Foundation
 
 class Helper {
     
-    var person: [String] = []
+    var persons: [Person] = []
     
-    func newPersonHelper(name: String, surName: String) {
-        
-        let fullName = name + " " + surName
-        
-        person.append(fullName)
+    func addPerson(_ person: Person) {
+        persons.append(person)
     }
     
-    func printPersonHelper() {
-        
-        for fullName in person {
-            print(fullName)
-        }
+    func printPersons() -> [Person] {
+        persons
     }
+    
 }

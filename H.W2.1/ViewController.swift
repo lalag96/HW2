@@ -15,11 +15,21 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print("Меня зовут \(person.fullName), я создал свое первое приложение")
+        let personOne = Person()
+        personOne.name = "Vlad"
+        personOne.surname = "Tsipushtanov"
         
-        personHelper.newPersonHelper(name: "Oleg", surName: "Kuznetsov" )
-        personHelper.newPersonHelper(name: "Marat", surName: "Gafurov")
-        personHelper.printPersonHelper()
+        let personTwo = Person()
+        personOne.name = "Marat"
+        personOne.surname = "Gafurov"
+    
+        personHelper.addPerson(personOne)
+        personHelper.addPerson(personTwo)
+        
+        let peopleList = personHelper.printPersons()
+                for person in peopleList {
+                    print(person.fullName)
+                }
     }
 }
 

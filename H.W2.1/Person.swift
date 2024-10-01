@@ -9,8 +9,8 @@ import Foundation
 
 class Person {
     
-    private var surname = "Tsipushtanov"
-    private var name = "Vlad"
+    var surname = "Tsipushtanov"
+    var name = "Vlad"
     
     var fullName: String {
         surname + " " + name
