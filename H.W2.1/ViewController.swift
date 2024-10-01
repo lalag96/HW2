@@ -10,12 +10,16 @@ import UIKit
 class ViewController: UIViewController {
     
     var person = Person()
+    var personHelper = Helper()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         print("Меня зовут \(person.fullName), я создал свое первое приложение")
-       
+        
+        personHelper.newPersonHelper(name: "Oleg", surName: "Kuznetsov" )
+        personHelper.newPersonHelper(name: "Marat", surName: "Gafurov")
+        personHelper.printPersonHelper()
     }
 }
 
