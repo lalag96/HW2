@@ -9,24 +9,18 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    var person = Person()
     var personHelper = Helper()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let personOne = Person()
-        personOne.name = "Vlad"
-        personOne.surname = "Tsipushtanov"
-        
-        let personTwo = Person()
-        personOne.name = "Marat"
-        personOne.surname = "Gafurov"
+        let personOne = Person(surname: "Vlad", name: "Tsipushtanov")
+        let personTwo = Person(surname: "Marat", name: "Marat")
     
         personHelper.addPerson(personOne)
         personHelper.addPerson(personTwo)
         
-        let peopleList = personHelper.printPersons()
+        let peopleList = personHelper.getPersons()
                 for person in peopleList {
                     print(person.fullName)
                 }
