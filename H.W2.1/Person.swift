@@ -7,19 +7,13 @@
 
 import Foundation
 
-class Person {
+struct Person {
     
     let surname: String
     let name: String
-    
-    init(surname: String, name: String) {
-        self.surname = surname
-        self.name = name
-    }
     
     var fullName: String {
         surname + " " + name
     }
 }
-
 
