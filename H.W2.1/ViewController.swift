@@ -9,7 +9,7 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    var userHelper = Helper()
+    private let userHelper = Helper()
     
     override func viewDidLoad() {
         super.viewDidLoad()
