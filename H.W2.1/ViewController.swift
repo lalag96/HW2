@@ -10,29 +10,20 @@ import UIKit
 class ViewController: UIViewController {
     
     private let userHelper = Helper()
+    private let userRepository = UserRepository()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let personInfoOne = Person(surname: "Vlad", name: "Tsipushtanov")
-        let personInfTwo = Person(surname: "Gafurov", name: "Marat")
+        view.backgroundColor = .red
+        view.alpha = 0.9
         
-        let userOne = User(
-            login: "sobaka_2000",
-            password: "123456",
-            personInfo: personInfoOne
-        )
+ 
+    let users = userRepository.returnUsers()
     
-        let userTwo = User(
-            login: "porovoz77",
-            password: "098765",
-            personInfo: personInfTwo
-        )
+        userHelper.addUsers(users)
         
-        userHelper.addUser(userOne)
-        userHelper.addUser(userTwo)
-        
-            let peopleList = userHelper.getUsers()
+        let peopleList = userHelper.getUsers()
                 for users in peopleList {
                     print(users.personInfo.fullName)
                 }

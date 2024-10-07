@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		F5854AF62CABB9AF005A7CAE /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5854AF52CABB9AF005A7CAE /* Person.swift */; };
 		F5854AF82CABBCDC005A7CAE /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5854AF72CABBCDC005A7CAE /* Helper.swift */; };
+		F58B5A2C2CB3F21C00FE26F0 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58B5A2B2CB3F21C00FE26F0 /* UserRepository.swift */; };
 		F5A7C4CB2C97EE4D007C23BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A7C4CA2C97EE4D007C23BD /* AppDelegate.swift */; };
 		F5A7C4CD2C97EE4D007C23BD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A7C4CC2C97EE4D007C23BD /* SceneDelegate.swift */; };
 		F5A7C4CF2C97EE4D007C23BD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A7C4CE2C97EE4D007C23BD /* ViewController.swift */; };
@@ -20,6 +21,7 @@
 /* Begin PBXFileReference section */
 		F5854AF52CABB9AF005A7CAE /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		F5854AF72CABBCDC005A7CAE /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
+		F58B5A2B2CB3F21C00FE26F0 /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
 		F5A7C4C72C97EE4D007C23BD /* H.W2.1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = H.W2.1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5A7C4CA2C97EE4D007C23BD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F5A7C4CC2C97EE4D007C23BD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -66,6 +68,7 @@
 				F5854AF52CABB9AF005A7CAE /* Person.swift */,
 				F5854AF72CABBCDC005A7CAE /* Helper.swift */,
 				F5DCCC212CAD6DB900EA14ED /* User.swift */,
+				F58B5A2B2CB3F21C00FE26F0 /* UserRepository.swift */,
 				F5A7C4D32C97EE4E007C23BD /* Assets.xcassets */,
 				F5A7C4D52C97EE4E007C23BD /* LaunchScreen.storyboard */,
 				F5A7C4D82C97EE4E007C23BD /* Info.plist */,
@@ -146,6 +149,7 @@
 				F5854AF62CABB9AF005A7CAE /* Person.swift in Sources */,
 				F5A7C4CF2C97EE4D007C23BD /* ViewController.swift in Sources */,
 				F5DCCC222CAD6DB900EA14ED /* User.swift in Sources */,
+				F58B5A2C2CB3F21C00FE26F0 /* UserRepository.swift in Sources */,
 				F5854AF82CABBCDC005A7CAE /* Helper.swift in Sources */,
 				F5A7C4CB2C97EE4D007C23BD /* AppDelegate.swift in Sources */,
 				F5A7C4CD2C97EE4D007C23BD /* SceneDelegate.swift in Sources */,

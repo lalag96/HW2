@@ -15,6 +15,12 @@ class Helper {
         users.append(user)
     }
     
+    func addUsers(_ users: [User]) {
+        for user in users {
+            addUser(user)
+        }
+    }
+    
     func getUsers() -> [User] {
         users
     }
