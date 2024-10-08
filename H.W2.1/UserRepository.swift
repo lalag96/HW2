@@ -12,7 +12,7 @@ class UserRepository {
     func returnUsers() -> [User] {
         
         let personInfoOne = Person(surname: "Vlad", name: "Tsipushtanov")
-        let personInfTwo = Person(surname: "Gafurov", name: "Marat")
+        let personInfoTwo = Person(surname: "Gafurov", name: "Marat")
         
         let userOne = User(
             login: "sobaka_2000",
@@ -23,7 +23,7 @@ class UserRepository {
         let userTwo = User(
             login: "porovoz77",
             password: "098765",
-            personInfo: personInfTwo
+            personInfo: personInfoTwo
         )
         
         return [userOne, userTwo]
