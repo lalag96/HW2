@@ -27,30 +27,31 @@ class ViewController: UIViewController {
         
         view.backgroundColor = .red
         view.alpha = 0.9
-    
+        
         setupLabel()
         view.addSubview(textLabel)
         view.addSubview(buttonPress)
         
- 
-    let users = userRepository.returnUsers()
+        fetchAndDisplayUsers()
+        
+    }
     
+    private func fetchAndDisplayUsers() {
+        let users = userRepository.returnUsers()
         userHelper.addUsers(users)
         
         let peopleList = userHelper.getUsers()
-                for users in peopleList {
-                    print(users.personInfo.fullName)
-                }
-        
-        func setupLabel() {
-            let randomUser = userRepository.returnUsers().randomElement()
-            
-            textLabel.text = "\(randomUser?.personInfo.fullName ?? "" )"
-            textLabel.font = .systemFont(ofSize: 25)
-            textLabel.textColor = .blue
-            textLabel.frame = CGRect(x: 100, y: 100, width: 100, height: 50)
+        for users in peopleList {
+            print(users.personInfo.fullName)
         }
-        
+    }
+    
+    private func setupLabel() {
+        let randomUser = userRepository.returnUsers().randomElement()
+        textLabel.text = "\(randomUser?.personInfo.fullName ?? "" )"
+        textLabel.font = .systemFont(ofSize: 25)
+        textLabel.textColor = .blue
+        textLabel.frame = CGRect(x: 100, y: 100, width: 100, height: 50)
     }
 }
 

@@ -7,15 +7,10 @@
 
 import Foundation
 
-class User {
+struct User {
     
     let login: String
     let password: String
     let personInfo: Person
     
-    init(login: String, password: String, personInfo: Person) {
-        self.login = login
-        self.password = password
-        self.personInfo = personInfo
-    }
 }
