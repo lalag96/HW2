@@ -12,15 +12,8 @@ class ViewController: UIViewController {
     private let userHelper = Helper()
     private let userRepository = UserRepository()
     private let textLabel = UILabel()
-    private let buttonPress: UIButton = {
-        let button = UIButton()
-        button.setTitle("Show FullName", for: .normal)
-        button.backgroundColor = .green
-        button.setTitleColor(.black, for: .normal)
-        button.frame = CGRect(x: 100, y: 150, width: 150, height: 50)
-        
-        return button
-    }()
+    private let buttonPress = UIButton()
+    private let stackView = UIStackView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,11 +21,14 @@ class ViewController: UIViewController {
         view.backgroundColor = .red
         view.alpha = 0.9
         
-        setupLabel()
-        view.addSubview(textLabel)
-        view.addSubview(buttonPress)
-        
         fetchAndDisplayUsers()
+        setupLabel()
+        setupButton()
+        setupStackView()
+        
+        view.addSubview(stackView)
+        
+        setupLayout()
         
     }
     
@@ -46,12 +42,38 @@ class ViewController: UIViewController {
         }
     }
     
+    private func setupStackView() {
+        stackView.axis = .vertical
+        stackView.distribution = .fillEqually
+        stackView.alignment = .fill
+        stackView.spacing = 10
+        
+        stackView.addArrangedSubview(textLabel)
+        stackView.addArrangedSubview(buttonPress)
+    }
+    
     private func setupLabel() {
-        let randomUser = userRepository.returnUsers().randomElement()
+        let randomUser = userHelper.getUsers().randomElement()
         textLabel.text = "\(randomUser?.personInfo.fullName ?? "" )"
         textLabel.font = .systemFont(ofSize: 25)
         textLabel.textColor = .blue
-        textLabel.frame = CGRect(x: 100, y: 100, width: 100, height: 50)
+    }
+    
+    private func setupButton() {
+        buttonPress.setTitle("Show FullName", for: .normal)
+        buttonPress.backgroundColor = .green
+        buttonPress.setTitleColor(.black, for: .normal)
+    }
+    
+    private func setupLayout() {
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            stackView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            stackView.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+        ])
+    
     }
 }
+                                    
 
