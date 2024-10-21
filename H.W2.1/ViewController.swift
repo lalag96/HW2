@@ -29,7 +29,6 @@ class ViewController: UIViewController {
         view.addSubview(stackView)
         
         setupLayout()
-        
     }
     
     private func fetchAndDisplayUsers() {
