@@ -34,47 +34,61 @@ class ViewController: UIViewController {
         setupLabel()
         setupStackView()
         
-        view.addSubview(stackView)
+        view.addSubview([stackView])
         
         setupLayout()
     }
-    
-    private func fetchAndDisplayUsers() {
-        let users = userRepository.returnUsers()
-        userHelper.addUsers(users)
-        
-        let peopleList = userHelper.getUsers()
-        for users in peopleList {
-            print(users.personInfo.fullName)
-        }
+}
+
+// MARK: - Setup View
+private extension ViewController {
+    func setupView() {
+        view.backgroundColor = .yellow
+        view.alpha = 0.9
+        setupLabel()
+        setupStackView()
+        view.addSubview(stackView)
+        setupLayout()
     }
     
-    private func setupStackView() {
-        stackView.axis = .vertical
-        stackView.distribution = .fillEqually
-        stackView.alignment = .fill
-        stackView.spacing = 10
-        
-        stackView.addArrangedSubview(textLabel)
-        stackView.addArrangedSubview(button)
-        stackView.addArrangedSubview(secondButton)
-    }
-    
-    private func setupLabel() {
+    func setupLabel() {
         let randomUser = userHelper.getUsers().randomElement()
         textLabel.text = "\(randomUser?.personInfo.fullName ?? "" )"
         textLabel.font = .systemFont(ofSize: 25)
         textLabel.textColor = .blue
     }
     
-    private func setupLayout() {
+    func setupStackView() {
+        stackView.axis = .vertical
+        stackView.distribution = .fillEqually
+        stackView.alignment = .fill
+        stackView.spacing = 10
+        
+        stackView.addArrangedSubview([textLabel, button, secondButton])
+    }
+}
+
+// MARK: - Working with data
+private extension ViewController {
+    func fetchAndDisplayUsers() {
+        let users = userRepository.returnUsers()
+        
+        userHelper.addUsers(users)
+        userHelper.getUsers().forEach { user in
+            print(user.personInfo.fullName)
+        }
+    }
+}
+
+// MARK: - Setup Layout
+private extension ViewController {
+    func setupLayout() {
         stackView.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
             stackView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             stackView.centerYAnchor.constraint(equalTo: view.centerYAnchor)
         ])
-    
     }
 }
                                     
