@@ -33,15 +33,33 @@ class ViewController: UIViewController {
         fetchAndDisplayUsers()
         setupLabel()
         setupStackView()
-        
-        view.addSubview([stackView])
+        view.addSubview(stackView)
+        addAction()
         
         setupLayout()
+    }
+    
+    @objc private func buttonPressed() {
+        textLabel.text = userHelper.getUsers().randomElement()?.personInfo.fullName
     }
 }
 
 // MARK: - Setup View
 private extension ViewController {
+    
+    func addAction() {
+        button.addTarget(
+            self,
+            action: #selector(buttonPressed),
+            for: .touchUpInside
+        )
+        
+        let action = UIAction { _ in
+            self.textLabel.text = ""
+        }
+        secondButton.addAction(action, for: .touchUpInside)
+    }
+    
     func setupView() {
         view.backgroundColor = .yellow
         view.alpha = 0.9
@@ -60,12 +78,13 @@ private extension ViewController {
     
     func setupStackView() {
         stackView.axis = .vertical
-        stackView.distribution = .fillEqually
+        stackView.distribution = .equalSpacing
         stackView.alignment = .fill
-        stackView.spacing = 10
+        stackView.spacing = 20
         
-        stackView.addArrangedSubview([textLabel, button, secondButton])
+        stackView.addArrangedSubview(textLabel, button, secondButton)
     }
+    
 }
 
 // MARK: - Working with data

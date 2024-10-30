@@ -27,6 +27,8 @@ private extension ButtonView {
         backgroundColor = color
         setTitleColor(.black, for: .normal)
         configureShadow(shadow)
+        
+        heightAnchor.constraint(equalToConstant: 50).isActive = true
     }
 }
 
